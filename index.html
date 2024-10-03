@@ -1,22 +1,51 @@
 <html>
-	<head>
 
-		<link href="estiloak.css" rel="stylesheet">
-	</head>
-	<body>
+<head>
+
+	<link href="estiloak.css" rel="stylesheet">
+	<script src="js/main.js"> </script>
+
+</head>
+
+<body>
 
 	<div class="flex-container">
 
-	  <div class="flex left">
-	    Flex Column 1
-	  </div>
+		<div class="flex left">
+			Flex Column 1 <br><br><br>
+			<div class="irudia"><img src="https://covers.openlibrary.org/b/id/8508261-M.jpg" id="irudia"></div>
 
-	  <div class="flex right">
-	    Flex Column 2
-	  </div>
+		</div>
+
+		<div class="flex right">
+			Flex Column 2<br><br><br>
+
+			<form>
+				<label for="izenburu"> Izenburua: </label>
+				<input type="text" id="izenburu">
+				<br><br>
+				<label for="egile"> Egilea: </label>
+				<input type="text" id=egile>
+				<br><br>
+				<label for="urte"> Urtea: </label>
+				<input type="text" id=urte>
+				<br><br>
+				<label for="isbn"> ISBN: </label>
+				<input type="text" id=isbn>
+
+			</form>
+
+			<div class="bilatu-botoia"> <input type="button" id=bilatu value="Bilatu"> <br><br> </div>
+		</div>
 
 	</div>
 
-    </body>
-</html>
+	<br><br>
+	<div class="gezi-botoiak">
+		<input type="button" id=atzera value=" << ">
+		<input type="button" id=aurrera value=" >> ">
+	</div>
 
+</body>
+
+</html>
