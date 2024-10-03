@@ -45,9 +45,27 @@ window.onload = () => {
     data.value = datu_base[0].data
     isbn.value = datu_base[0].isbn
 
-    let BilatuBtn = document.getElementById('bilatu')
+    let bilatuBtn = document.getElementById('bilatu')
+    let atzera = document.getElementById('atzera')
+    let aurrera = document.getElementById('aurrera')
 
-    document.addEventListener()
+    bilatuBtn.addEventListener('click', (event) => {
+        let isbn_balioa = isbn.value;
+        if (isbn_balioa != '') {
+            array_elementua = datu_base.filter(e => e.isbn == isbn_balioa)
+            if (array_elementua.length != 0) {
+                izenburu.value = array_elementua[0].izenburua
+                egile.value = array_elementua[0].egilea
+                data.value = array_elementua[0].data
+                irudia.src = "https://covers.openlibrary.org/b/id/" + array_elementua[0].filename;
+            }else{
+                console.log("ISBN-a ez da baliozkoa")
+            }
+        } else {
+            console.log('ISBN-aren balioa hutsik dago')
+        }
+    })
+
 
 
 
