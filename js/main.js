@@ -34,16 +34,24 @@ window.onload = () => {
         }
     ]
 
+
+    function datuak_hartu(indizea){
+        izenburu.value = datu_base[indizea].izenburua
+        egile.value = datu_base[indizea].egilea
+        data.value = datu_base[indizea].data
+        isbn.value = datu_base[indizea].isbn
+        irudia.src = "https://covers.openlibrary.org/b/id/" + datu_base[indizea].filename;
+    }
+
+    
+
     let irudia = document.getElementById('irudia')
     let izenburu = document.getElementById('izenburu')
     let egile = document.getElementById('egile')
     let data = document.getElementById('urte')
     let isbn = document.getElementById('isbn')
 
-    izenburu.value = datu_base[0].izenburua
-    egile.value = datu_base[0].egilea
-    data.value = datu_base[0].data
-    isbn.value = datu_base[0].isbn
+    datuak_hartu(0);
 
     let bilatuBtn = document.getElementById('bilatu')
     let atzera = document.getElementById('atzera')
@@ -63,6 +71,21 @@ window.onload = () => {
             }
         } else {
             console.log('ISBN-aren balioa hutsik dago')
+        }
+    })
+
+    let gezi_indize = 0;
+    atzera.addEventListener('click', () => {
+        if (gezi_indize != 0){
+            gezi_indize -= 1;
+            datuak_hartu(gezi_indize)
+        }
+    })
+
+    aurrera.addEventListener('click', () => {
+        if (gezi_indize != 3){
+            gezi_indize += 1;
+            datuak_hartu(gezi_indize)
         }
     })
 
